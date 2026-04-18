@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bfjs7ma2aoadc"]
+
+[ext_resource type="AudioStream" uid="uid://bqfq30nj1pc6r" path="res://mixkit-arcade-game-jump-coin-216.wav" id="1_mvpnv"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" unique_id=1071846146]
+stream = ExtResource("1_mvpnv")

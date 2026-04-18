@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://db3veqo5jaglf"]
+
+[ext_resource type="Script" uid="uid://b7ssvr5qjq7nf" path="res://game.gd" id="1_vef74"]
+[ext_resource type="PackedScene" uid="uid://bjo2frt4fxud6" path="res://directional_light_3d.tscn" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://1n580yyf1gyy" path="res://camera_3d.tscn" id="4_7jktm"]
+[ext_resource type="PackedScene" uid="uid://bg3xge6eduegi" path="res://characterBody_3D/character_body_3d.tscn" id="4_ryrav"]
+[ext_resource type="PackedScene" uid="uid://bcxim18apgita" path="res://collectable/area_3d.tscn" id="8_j5wjh"]
+
+[node name="Game" type="Node3D" unique_id=1889642264]
+script = ExtResource("1_vef74")
+
+[node name="DirectionalLight3D" parent="." unique_id=1157285337 instance=ExtResource("3_fc0e3")]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 4, 3)
+
+[node name="Camera3D" parent="." unique_id=177209525 instance=ExtResource("4_7jktm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 10)
+
+[node name="CharacterBody3D" parent="." unique_id=871760159 instance=ExtResource("4_ryrav")]
+
+[node name="Collectable" parent="." unique_id=1233241006 instance=ExtResource("8_j5wjh")]

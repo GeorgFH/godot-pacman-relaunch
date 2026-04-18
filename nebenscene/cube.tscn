@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dhxccmlkb8uhw"]
+
+[ext_resource type="PackedScene" uid="uid://yst6yhu80lse" path="res://nebenscene/nebenscene.tscn" id="1_3q2i1"]
+[ext_resource type="Script" uid="uid://bhs7eo62825et" path="res://nebenscene/nebenscene.gd" id="2_b8ku7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wd2d1"]
+
+[node name="Nebenscene" type="Node3D" unique_id=489067797]
+
+[node name="Cube" parent="." unique_id=160855676 instance=ExtResource("1_3q2i1")]
+mesh = SubResource("CapsuleMesh_wd2d1")
+script = ExtResource("2_b8ku7")

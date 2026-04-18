@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bcxim18apgita"]
+
+[ext_resource type="Script" uid="uid://d3d4gvhukmiom" path="res://collectable/area_3d.gd" id="1_n17cu"]
+[ext_resource type="PackedScene" uid="uid://b7pgdn47egvop" path="res://collectable/collision_shape_3d.tscn" id="2_s3bsp"]
+[ext_resource type="PackedScene" uid="uid://yl0iowx3td55" path="res://collectable/mesh_instance_3d.tscn" id="3_vua1t"]
+[ext_resource type="PackedScene" uid="uid://tlpfrxkihqn8" path="res://collectable/animation_player.tscn" id="4_so4lr"]
+[ext_resource type="PackedScene" uid="uid://bfjs7ma2aoadc" path="res://collectable/audio_stream_player_3d.tscn" id="5_mw30n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3bsp"]
+albedo_color = Color(0.011764706, 0.043137256, 1, 1)
+
+[node name="Area3D_Collectable" type="Area3D" unique_id=1233241006]
+script = ExtResource("1_n17cu")
+
+[node name="CollisionShape3D" parent="." unique_id=1292152455 instance=ExtResource("2_s3bsp")]
+
+[node name="MeshInstance3D" parent="." unique_id=1325150932 instance=ExtResource("3_vua1t")]
+material_override = SubResource("StandardMaterial3D_s3bsp")
+
+[node name="AnimationPlayer" parent="." unique_id=230679142 instance=ExtResource("4_so4lr")]
+
+[node name="AudioStreamPlayer3D" parent="." unique_id=1071846146 instance=ExtResource("5_mw30n")]

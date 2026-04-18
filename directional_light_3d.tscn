@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bjo2frt4fxud6"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" unique_id=1157285337]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bg3xge6eduegi"]
+
+[ext_resource type="Script" uid="uid://1e7ha07fwbpv" path="res://characterBody_3D/character_body_3d.gd" id="1_fb3t6"]
+[ext_resource type="PackedScene" uid="uid://c0jh3oe676opx" path="res://nebenscene/player_3.tscn" id="2_vd578"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4qq8"]
+albedo_color = Color(1, 1, 0.047058824, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ryrav"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_eow3j"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=871760159]
+script = ExtResource("1_fb3t6")
+
+[node name="PlayerShape3D" parent="." unique_id=1528932446 instance=ExtResource("2_vd578")]
+material_override = SubResource("StandardMaterial3D_j4qq8")
+mesh = SubResource("SphereMesh_ryrav")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1341469165]
+shape = SubResource("SphereShape3D_eow3j")
