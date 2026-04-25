@@ -19,17 +19,17 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
-	if Input.is_action_just_pressed("boost"):
-		SPEED+=SPRINT_MULTIPLIER;
-	if Input.is_action_just_released("boost"):
-		SPEED-=SPRINT_MULTIPLIER;
+	var current_speed = SPEED
+
+	if Input.is_action_pressed("boost"):
+		current_speed *= SPRINT_MULTIPLIER
 	
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * current_speed
+		velocity.z = direction.z * current_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, current_speed)
+		velocity.z = move_toward(velocity.z, 0, current_speed)
 
 	if direction != Vector3.ZERO:
 		model.look_at(global_position - direction, Vector3.UP)

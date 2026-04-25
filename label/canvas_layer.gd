@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @export var game_duration = 60
-@export var win_score = 2
+@export var win_score = 5
 @export var stage = 0
 
 @onready var stage_label: Label = $Stage
@@ -16,9 +16,12 @@ extends CanvasLayer
 var score = 0
 var time_left = game_duration
 var game_running = false
+var base_win_score = 0
 
 func _ready() -> void:
 	get_tree().paused = true
+	
+	base_win_score = win_score
 	
 	start_button.show()
 	score = 0
@@ -35,11 +38,13 @@ func _on_start():
 	get_tree().current_scene.build_map(stage)
 	get_tree().current_scene.spawn_enemies(stage)
 	
-	label.text = "Score: 0 / " + str(win_score)
-	stage_label.text = "Stage: " + str(stage +1)
 	stage += 1 
+	stage_label.text = "Stage: " + str(stage)
 	score = 0
-	win_score += stage
+	
+	win_score = base_win_score + int(stage * (stage - 1) / 2)
+	
+	label.text = "Score: 0 / " + str(win_score)
 	
 	get_tree().paused = false  
 	start_button.hide()   
