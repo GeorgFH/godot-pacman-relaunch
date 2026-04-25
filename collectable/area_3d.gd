@@ -9,11 +9,11 @@ func _ready() -> void:
 	anim.play("new_animation1")
 
 func _on_body_entered(body):
-	print("Kollision mit:", body.name)
+	# print("Kollision mit:", body.name)
 	
 	if body is CharacterBody3D:
 		Ui.add_point()
-		print("Punkt!")
+		# print("Punkt!")
 		audio.play()
 		await audio.finished
 		queue_free()   

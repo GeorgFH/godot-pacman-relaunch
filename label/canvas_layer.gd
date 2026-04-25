@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-@export var game_duration = 40
-@export var win_score = 25
+@export var game_duration = 60
+@export var win_score = 30
 
 @onready var label: Label = $Label
 @onready var reset_button: Button = $Button
