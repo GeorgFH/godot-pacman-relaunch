@@ -9,6 +9,7 @@
 script = ExtResource("1_w7n1h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1034544317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036574364, 0, 0)
 shape = SubResource("SphereShape3D_s0dxi")
 
 [node name="Sketchfab_Scene" parent="." unique_id=754637422 instance=ExtResource("1_s0dxi")]

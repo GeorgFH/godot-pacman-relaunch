@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://ctwwrkfsep0l5"]
+
+[node name="Worldborder" type="Node3D" unique_id=1806790524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 40, 0, 0, 0)

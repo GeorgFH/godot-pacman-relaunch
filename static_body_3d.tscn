@@ -6,7 +6,7 @@
 noise = SubResource("FastNoiseLite_7jktm")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eow3j"]
-albedo_color = Color(0.4392157, 0.827451, 0.84313726, 1)
+albedo_color = Color(0.2465164, 0.7257805, 0.4688554, 1)
 albedo_texture = SubResource("NoiseTexture2D_ryrav")
 
 [sub_resource type="BoxMesh" id="BoxMesh_7jktm"]
