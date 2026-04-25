@@ -4,6 +4,9 @@ extends Node3D
 @export var spawn_count := 10
 
 const COLLECTIBLE = preload("res://collectable/area_3d.tscn")
+const ENEMY = preload("res://enemy.tscn")
+
+@export var enemy_count = 3
 
 func _ready() -> void:
 	randomize()
@@ -26,6 +29,7 @@ func _ready() -> void:
 		randf_range(-7.5, 7.5)
 		)
 		add_child(obstacle)
+	spawn_enemies()
 	
 
 func spawn_collectible():
@@ -44,6 +48,12 @@ func spawn_collectible():
 	await get_tree().create_timer(1).timeout
 	
 	spawn_collectible()
+
+func spawn_enemies():
+	for i in range(enemy_count):
+		var e = ENEMY.instantiate()
+		add_child(e)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

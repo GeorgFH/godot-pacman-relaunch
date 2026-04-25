@@ -6,22 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bjo2frt4fxud6" path="res://directional_light_3d.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://1n580yyf1gyy" path="res://camera_3d.tscn" id="4_7jktm"]
 [ext_resource type="PackedScene" uid="uid://cuxy5l7r5i8yv" path="res://playerNew/Playerr.tscn" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://bg3xge6eduegi" path="res://characterBody_3D/character_body_3d.tscn" id="4_ryrav"]
+[ext_resource type="PackedScene" uid="uid://btboxewwmqcot" path="res://static_body_3d.tscn" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://dq4cfs0pn5csh" path="res://enemy.tscn" id="7_eow3j"]
 [ext_resource type="PackedScene" uid="uid://bcxim18apgita" path="res://collectable/area_3d.tscn" id="8_j5wjh"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_7jktm"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ryrav"]
-noise = SubResource("FastNoiseLite_7jktm")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eow3j"]
-albedo_color = Color(0.4392157, 0.827451, 0.84313726, 1)
-albedo_texture = SubResource("NoiseTexture2D_ryrav")
-
-[sub_resource type="BoxMesh" id="BoxMesh_7jktm"]
-size = Vector3(30, 1, 30)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ryrav"]
-size = Vector3(30, 1, 30)
 
 [node name="Game" type="Node3D" unique_id=1889642264]
 script = ExtResource("1_vef74")
@@ -31,19 +19,12 @@ obstacle_scenes = Array[PackedScene]([ExtResource("2_ryrav"), ExtResource("3_eow
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 4, 3)
 
 [node name="Camera3D" parent="." unique_id=177209525 instance=ExtResource("4_7jktm")]
-transform = Transform3D(1, 0, 0, 0, 0.7485971, 0.66302514, 0, -0.66302514, 0.7485971, 0, 5.288661, 13.931089)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 15)
+
+[node name="Player" parent="." unique_id=871760159 instance=ExtResource("4_ryrav")]
 
 [node name="Collectable" parent="." unique_id=1233241006 instance=ExtResource("8_j5wjh")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=885524798]
+[node name="StaticBody3D" parent="." unique_id=906496084 instance=ExtResource("6_ryrav")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=57100595]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-material_override = SubResource("StandardMaterial3D_eow3j")
-mesh = SubResource("BoxMesh_7jktm")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=418643394]
-shape = SubResource("BoxShape3D_ryrav")
-
-[node name="CharacterBody3D2" parent="." unique_id=2007017533 instance=ExtResource("6_ryrav")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.135726, 0)
+[node name="Enemy" parent="." unique_id=1570130439 instance=ExtResource("7_eow3j")]
