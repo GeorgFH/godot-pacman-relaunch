@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://duqyyxbiwhhqc"]
+
+[ext_resource type="PackedScene" uid="uid://te32l2s3rr4r" path="res://obstacle_scenes/set_of_cardboard_boxes/scene.gltf" id="1_nfmby"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uysds"]
+
+[node name="BoxObstacle" type="Node3D" unique_id=978229928]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1991581531]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=2037484619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.061598897, 0)
+shape = SubResource("BoxShape3D_uysds")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D" unique_id=390993777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8906596, 0.123197794, 0.5341644)
+shape = SubResource("BoxShape3D_uysds")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D" unique_id=2138108109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5864401, 0.24639559, 0.18795633)
+shape = SubResource("BoxShape3D_uysds")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="RigidBody3D" unique_id=719290507]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.4983517, 1.1251495, 0.0298208)
+shape = SubResource("BoxShape3D_uysds")
+
+[node name="Sketchfab_Scene" parent="." unique_id=382933200 instance=ExtResource("1_nfmby")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.043020368, -0.24415028, 0)

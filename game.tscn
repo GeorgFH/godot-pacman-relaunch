@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://db3veqo5jaglf"]
 
 [ext_resource type="Script" uid="uid://b7ssvr5qjq7nf" path="res://game.gd" id="1_vef74"]
+[ext_resource type="PackedScene" uid="uid://duqyyxbiwhhqc" path="res://obstacle_scenes/BoxObstacle1.tscn" id="2_ryrav"]
+[ext_resource type="PackedScene" uid="uid://nj0ja8qw8kt3" path="res://obstacle_scenes/BoxObstacle2.tscn" id="3_eow3j"]
 [ext_resource type="PackedScene" uid="uid://bjo2frt4fxud6" path="res://directional_light_3d.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://1n580yyf1gyy" path="res://camera_3d.tscn" id="4_7jktm"]
 [ext_resource type="PackedScene" uid="uid://cuxy5l7r5i8yv" path="res://playerNew/Playerr.tscn" id="6_ryrav"]
@@ -23,19 +25,20 @@ size = Vector3(30, 1, 30)
 
 [node name="Game" type="Node3D" unique_id=1889642264]
 script = ExtResource("1_vef74")
+obstacle_scenes = Array[PackedScene]([ExtResource("2_ryrav"), ExtResource("3_eow3j")])
 
 [node name="DirectionalLight3D" parent="." unique_id=1157285337 instance=ExtResource("3_fc0e3")]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 4, 3)
 
 [node name="Camera3D" parent="." unique_id=177209525 instance=ExtResource("4_7jktm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 15)
+transform = Transform3D(1, 0, 0, 0, 0.7485971, 0.66302514, 0, -0.66302514, 0.7485971, 0, 5.288661, 13.931089)
 
 [node name="Collectable" parent="." unique_id=1233241006 instance=ExtResource("8_j5wjh")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=885524798]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=57100595]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 material_override = SubResource("StandardMaterial3D_eow3j")
 mesh = SubResource("BoxMesh_7jktm")
 

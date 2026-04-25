@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://nj0ja8qw8kt3"]
+
+[ext_resource type="PackedScene" uid="uid://dfkxxn6c75hfn" path="res://obstacle_scenes/crate_box/scene.gltf" id="1_02a2u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uysds"]
+
+[node name="BoxObstacle" type="Node3D" unique_id=978229928]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1991581531]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=2037484619]
+shape = SubResource("BoxShape3D_uysds")
+
+[node name="Sketchfab_Scene" parent="." unique_id=855386666 instance=ExtResource("1_02a2u")]
+transform = Transform3D(0.017, 0, 0, 0, 0.017, 0, 0, 0, 0.017, 0, -0.48474985, 0)
