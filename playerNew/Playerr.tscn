@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cuxy5l7r5i8yv"]
+
+[ext_resource type="PackedScene" uid="uid://kwebvxjo3jyx" path="res://playerNew/pacman_that_nobody_asked_for/scene.gltf" id="1_s0dxi"]
+[ext_resource type="Script" uid="uid://drhely3a17spp" path="res://playerNew/playerr.gd" id="1_w7n1h"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s0dxi"]
+
+[node name="CharacterBody3D2" type="CharacterBody3D" unique_id=2007017533]
+script = ExtResource("1_w7n1h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1034544317]
+shape = SubResource("SphereShape3D_s0dxi")
+
+[node name="Sketchfab_Scene" parent="." unique_id=754637422 instance=ExtResource("1_s0dxi")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.2737993, -0.52031565, 0.5147089)
