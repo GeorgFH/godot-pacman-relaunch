@@ -10,12 +10,15 @@ const ENEMY = preload("res://enemy.tscn")
 
 func _ready() -> void:
 	randomize()
+	build_map(10)
+	spawn_enemies(enemy_count)
 
+func build_map(count):
 	if obstacle_scenes.is_empty():
 		print("Keine Hindernis-Szenen zugewiesen!")
 		return
 
-	for i in spawn_count:
+	for i in count:
 		var scene = obstacle_scenes.pick_random()
 
 		if scene == null:
@@ -29,27 +32,6 @@ func _ready() -> void:
 		randf_range(-7.5, 7.5)
 		)
 		add_child(obstacle)
-	spawn_enemies()
-	
-	if obstacle_scenes.is_empty():
-		print("Keine Hindernis-Szenen zugewiesen!")
-		return
-
-	for i in spawn_count:
-		var scene = obstacle_scenes.pick_random()
-
-		if scene == null:
-			print("Ein Eintrag in obstacle_scenes ist leer!")
-			continue
-
-		var obstacle = scene.instantiate()
-		obstacle.position = Vector3(
-		randf_range(-7.5, 7.5),
-		1,
-		randf_range(-7.5, 7.5)
-		)
-		add_child(obstacle)
-	
 
 func spawn_collectible():
 	if get_tree().paused:
@@ -68,8 +50,8 @@ func spawn_collectible():
 	
 	spawn_collectible()
 
-func spawn_enemies():
-	for i in range(enemy_count):
+func spawn_enemies(count):
+	for i in range(count):
 		var e = ENEMY.instantiate()
 		add_child(e)
 
