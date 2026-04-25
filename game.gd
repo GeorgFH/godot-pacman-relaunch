@@ -1,5 +1,8 @@
 extends Node3D
 
+@export var obstacle_scenes: Array[PackedScene]
+@export var spawn_count := 10
+
 const COLLECTIBLE = preload("res://collectable/area_3d.tscn")
 const ENEMY = preload("res://enemy.tscn")
 
@@ -10,6 +13,25 @@ const ENEMY = preload("res://enemy.tscn")
 
 func _ready() -> void:
 	randomize()
+
+	if obstacle_scenes.is_empty():
+		print("Keine Hindernis-Szenen zugewiesen!")
+		return
+
+	for i in spawn_count:
+		var scene = obstacle_scenes.pick_random()
+
+		if scene == null:
+			print("Ein Eintrag in obstacle_scenes ist leer!")
+			continue
+
+		var obstacle = scene.instantiate()
+		obstacle.position = Vector3(
+		randf_range(-7.5, 7.5),
+		1,
+		randf_range(-7.5, 7.5)
+		)
+		add_child(obstacle)
 	spawn_enemies()
 	
 	if obstacle_scenes.is_empty():
