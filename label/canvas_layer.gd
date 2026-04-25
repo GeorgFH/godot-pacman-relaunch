@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @export var game_duration = 60
-@export var win_score = 3
+@export var win_score = 2
 @export var stage = 0
 
 @onready var stage_label: Label = $Stage
@@ -11,6 +11,7 @@ extends CanvasLayer
 @onready var timer_label: Label = $Timer
 @onready var result_label: Label = $Result
 @onready var game_over_sound: AudioStreamPlayer = $GameOverSound
+@onready var game_win_sound: AudioStreamPlayer = $GameWinSound
 
 var score = 0
 var time_left = game_duration
@@ -35,7 +36,7 @@ func _on_start():
 	get_tree().current_scene.spawn_enemies(stage)
 	
 	label.text = "Score: 0 / " + str(win_score)
-	stage_label.text = "Stage: " + str(stage)
+	stage_label.text = "Stage: " + str(stage +1)
 	stage += 1 
 	score = 0
 	win_score += stage
@@ -68,19 +69,20 @@ func add_point():
 func check_game_end():
 	game_running = false
 	
-	game_over_sound.play()
-	
 	get_tree().paused = true
 	
 	if score >= win_score:
 		result_label.text = "WIN! Stage: " + str(stage)
 		start_button.show()
+		game_win_sound.play()
+		
 	else:
 		result_label.text = "LOSE! Stage: " + str(stage)
+		game_over_sound.play()
 	
 func _on_reset():
 	get_tree().paused = true
-
+	
 	score = 0
 	stage = 0
 	label.text = "Score: 0"

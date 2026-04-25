@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j2gbndom4xkf" path="res://label/canvas_layer.gd" id="1_p7mdr"]
 [ext_resource type="AudioStream" uid="uid://c4tkkw6eyo5p3" path="res://mixkit-sad-game-over-trombone-471.wav" id="2_sq453"]
+[ext_resource type="AudioStream" uid="uid://cxmmbf08ok3bk" path="res://mixkit-arcade-bonus-alert-767.wav" id="3_oho1x"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=198813702]
 script = ExtResource("1_p7mdr")
@@ -14,6 +15,7 @@ text = "Score: 0"
 
 [node name="Reset" type="Button" parent="." unique_id=1470342842]
 process_mode = 3
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -80,3 +82,6 @@ text = "Stage:"
 [node name="GameOverSound" type="AudioStreamPlayer" parent="." unique_id=1186900661]
 process_mode = 3
 stream = ExtResource("2_sq453")
+
+[node name="GameWinSound" type="AudioStreamPlayer" parent="." unique_id=1611361576]
+stream = ExtResource("3_oho1x")

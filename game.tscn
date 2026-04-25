@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://nj0ja8qw8kt3" path="res://obstacle_scenes/BoxObstacle2.tscn" id="3_hve3p"]
 [ext_resource type="PackedScene" uid="uid://1n580yyf1gyy" path="res://camera_3d.tscn" id="4_7jktm"]
 [ext_resource type="PackedScene" uid="uid://cg1oecxrw2g6f" path="res://obstacle_scenes/BoxObstacle3.tscn" id="4_hve3p"]
-[ext_resource type="PackedScene" uid="uid://dq4cfs0pn5csh" path="res://enemy.tscn" id="7_eow3j"]
 [ext_resource type="PackedScene" uid="uid://bcxim18apgita" path="res://collectable/area_3d.tscn" id="8_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://cuxy5l7r5i8yv" path="res://playerNew/Playerr.tscn" id="8_vef74"]
 [ext_resource type="PackedScene" uid="uid://cov3gg5v7cyo6" path="res://world_border.tscn" id="9_vef74"]
@@ -25,11 +24,6 @@ transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70
 
 [node name="Collectable" parent="." unique_id=1233241006 instance=ExtResource("8_j5wjh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.793126, 1.0177121, 0)
-visible = false
-
-[node name="Enemy" parent="." unique_id=1570130439 instance=ExtResource("7_eow3j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0287576, 3.887248)
-visible = false
 
 [node name="Player" parent="." unique_id=2007017533 instance=ExtResource("8_vef74")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.501731, 0)

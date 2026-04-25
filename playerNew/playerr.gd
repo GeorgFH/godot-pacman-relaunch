@@ -1,10 +1,10 @@
 extends CharacterBody3D
 
 @export var SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 6
 const SPRINT_MULTIPLIER = 2
 
-@onready var model = $Sketchfab_Scene 
+@onready var model = $Node3D 
 
 func _physics_process(delta: float) -> void:
 	# Gravity
@@ -31,7 +31,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	# 👉 HIER drehen wir den Player
 	if direction != Vector3.ZERO:
 		model.look_at(global_position - direction, Vector3.UP)
 
