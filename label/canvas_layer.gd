@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var start_button: Button = $Button_Start
 @onready var timer_label: Label = $Label_Timer
 @onready var result_label: Label = $Label_Result
+@onready var game_over_sound: AudioStreamPlayer = $GameOverSound
 
 var score = 0
 var time_left = game_duration
@@ -53,6 +54,9 @@ func add_point():
 	
 func check_game_end():
 	game_running = false
+	
+	game_over_sound.play()
+	
 	get_tree().paused = true
 	
 	if score >= win_score:

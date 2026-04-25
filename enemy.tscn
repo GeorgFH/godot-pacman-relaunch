@@ -10,6 +10,8 @@ albedo_color = Color(1, 0.26666668, 0.26666668, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hve3p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eow3j"]
+radius = 0.7
+height = 2.2
 
 [node name="Enemy" type="CharacterBody3D" unique_id=1570130439]
 script = ExtResource("1_7k104")
