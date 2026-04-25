@@ -1,13 +1,15 @@
 extends CanvasLayer
 
 @export var game_duration = 60
-@export var win_score = 30
+@export var win_score = 3
+@export var stage = 0
 
-@onready var label: Label = $Label
-@onready var reset_button: Button = $Button
-@onready var start_button: Button = $Button_Start
-@onready var timer_label: Label = $Label_Timer
-@onready var result_label: Label = $Label_Result
+@onready var stage_label: Label = $Stage
+@onready var label: Label = $Score
+@onready var reset_button: Button = $Reset
+@onready var start_button: Button = $Start
+@onready var timer_label: Label = $Timer
+@onready var result_label: Label = $Result
 @onready var game_over_sound: AudioStreamPlayer = $GameOverSound
 
 var score = 0
@@ -19,14 +21,25 @@ func _ready() -> void:
 	
 	start_button.show()
 	score = 0
-	label.text = "Score: 0"
+	label.text = "Score: 0 / " + str(win_score)
+	
 	timer_label.text = "Time: " + str(game_duration)
-	result_label.text = ""  
+	stage_label.text = "Stage: " + str(stage)  
 		
 	reset_button.pressed.connect(_on_reset)
 	start_button.pressed.connect(_on_start)
 	
 func _on_start():
+	
+	get_tree().current_scene.build_map(stage)
+	get_tree().current_scene.spawn_enemies(stage)
+	
+	label.text = "Score: 0 / " + str(win_score)
+	stage_label.text = "Stage: " + str(stage)
+	stage += 1 
+	score = 0
+	win_score += stage
+	
 	get_tree().paused = false  
 	start_button.hide()   
 	result_label.text = ""
@@ -47,7 +60,7 @@ func start_timer():
 
 func add_point():
 	score += 1
-	label.text = "Score: " + str(score)
+	label.text = "Score: " + str(score) +" / " + str(win_score)
 	
 	if score >= win_score and game_running: 
 		check_game_end()
@@ -60,14 +73,16 @@ func check_game_end():
 	get_tree().paused = true
 	
 	if score >= win_score:
-		result_label.text = "WIN!"
+		result_label.text = "WIN! Stage: " + str(stage)
+		start_button.show()
 	else:
-		result_label.text = "LOSE!"
+		result_label.text = "LOSE! Stage: " + str(stage)
 	
 func _on_reset():
 	get_tree().paused = true
 
 	score = 0
+	stage = 0
 	label.text = "Score: 0"
 	
 	time_left = game_duration 
