@@ -6,9 +6,6 @@ extends Node3D
 const COLLECTIBLE = preload("res://collectable/area_3d.tscn")
 const ENEMY = preload("res://enemy.tscn")
 
-@export var obstacle_scenes: Array[PackedScene]
-@export var spawn_count := 10
-
 @export var enemy_count = 3
 
 func _ready() -> void:
