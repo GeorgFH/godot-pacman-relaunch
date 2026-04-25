@@ -4,6 +4,17 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vef74"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_4jt1s"]
+
+[sub_resource type="Gradient" id="Gradient_t5o5j"]
+colors = PackedColorArray(0.16084597, 0.99605054, 0.9999998, 1, 0.6633583, 0.9257342, 0.98548824, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ngnhq"]
+gradient = SubResource("Gradient_t5o5j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxm3k"]
+albedo_texture = SubResource("GradientTexture2D_ngnhq")
+
 [node name="WorldBorder" type="Node3D" unique_id=2020130601]
 
 [node name="Right" type="Node3D" parent="." unique_id=130040566]
@@ -15,6 +26,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_vef74")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right" unique_id=602011975]
+transform = Transform3D(-8.742277e-07, -20, -8.7422785e-07, 20, -8.742278e-07, 8.742277e-07, -8.742278e-07, -8.742278e-07, 20, 0, 0, 0)
+mesh = SubResource("PlaneMesh_4jt1s")
+surface_material_override/0 = SubResource("StandardMaterial3D_xxm3k")
+
 [node name="Left" type="Node3D" parent="." unique_id=1004649475]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -15, 0, 0)
 
@@ -24,8 +40,18 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -15,
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_vef74")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left" unique_id=1083786757]
+transform = Transform3D(-8.742277e-07, -20, -8.7422785e-07, 20, -8.742278e-07, 8.742277e-07, -8.742278e-07, -8.742278e-07, 20, 0, 0, 0)
+mesh = SubResource("PlaneMesh_4jt1s")
+surface_material_override/0 = SubResource("StandardMaterial3D_xxm3k")
+
 [node name="Back" type="Node3D" parent="." unique_id=1962791102]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -15)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Back" unique_id=197348374]
+transform = Transform3D(-8.742277e-07, -20, -8.7422785e-07, 20, -8.742278e-07, 8.742277e-07, -8.742278e-07, -8.742278e-07, 20, 0, 0, 0)
+mesh = SubResource("PlaneMesh_4jt1s")
+surface_material_override/0 = SubResource("StandardMaterial3D_xxm3k")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Back" unique_id=518892179]
 

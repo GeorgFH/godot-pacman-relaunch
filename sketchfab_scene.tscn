@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://osn3f60k0lew"]
+
+[ext_resource type="PackedScene" uid="uid://kwebvxjo3jyx" path="res://playerNew/pacman_that_nobody_asked_for/scene.gltf" id="1_r57si"]
+
+[node name="Sketchfab_Scene" unique_id=754637422 instance=ExtResource("1_r57si")]
+
+[node name="tinker_obj_cleaner_materialmerger_gles" parent="Sketchfab_model" parent_id_path=PackedInt32Array(953973836) index="0" unique_id=599994208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.47332, 48.541325, -51.88553)
