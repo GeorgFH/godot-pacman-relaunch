@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b7ssvr5qjq7nf" path="res://game.gd" id="1_vef74"]
 [ext_resource type="PackedScene" uid="uid://bjo2frt4fxud6" path="res://directional_light_3d.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://1n580yyf1gyy" path="res://camera_3d.tscn" id="4_7jktm"]
-[ext_resource type="PackedScene" uid="uid://bg3xge6eduegi" path="res://characterBody_3D/character_body_3d.tscn" id="4_ryrav"]
+[ext_resource type="PackedScene" uid="uid://cuxy5l7r5i8yv" path="res://playerNew/Playerr.tscn" id="6_ryrav"]
 [ext_resource type="PackedScene" uid="uid://bcxim18apgita" path="res://collectable/area_3d.tscn" id="8_j5wjh"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_7jktm"]
@@ -30,8 +30,6 @@ transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70
 [node name="Camera3D" parent="." unique_id=177209525 instance=ExtResource("4_7jktm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 15)
 
-[node name="CharacterBody3D" parent="." unique_id=871760159 instance=ExtResource("4_ryrav")]
-
 [node name="Collectable" parent="." unique_id=1233241006 instance=ExtResource("8_j5wjh")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=885524798]
@@ -43,3 +41,6 @@ mesh = SubResource("BoxMesh_7jktm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=418643394]
 shape = SubResource("BoxShape3D_ryrav")
+
+[node name="CharacterBody3D2" parent="." unique_id=2007017533 instance=ExtResource("6_ryrav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.135726, 0)

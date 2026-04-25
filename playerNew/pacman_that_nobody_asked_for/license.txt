@@ -1,0 +1,11 @@
+Model Information:
+* title:	pacman that nobody asked for!
+* source:	https://sketchfab.com/3d-models/pacman-that-nobody-asked-for-6053a8ff527f4f1781ed85992d63fa71
+* author:	londonik (https://sketchfab.com/londonik)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "pacman that nobody asked for!" (https://sketchfab.com/3d-models/pacman-that-nobody-asked-for-6053a8ff527f4f1781ed85992d63fa71) by londonik (https://sketchfab.com/londonik) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
