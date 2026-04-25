@@ -54,24 +54,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2dqg1")
 
-[node name="BoxObstacle" type="Node3D" unique_id=978229928]
-transform = Transform3D(1.5, 0, 0, 0, -6.556708e-08, -1.5, 0, 1.5, -6.556708e-08, 0, 0.5, 0)
+[node name="RigidBody3D" type="RigidBody3D" unique_id=1991581531]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1991581531]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=2037484619]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2037484619]
 shape = SubResource("BoxShape3D_uysds")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D" unique_id=81106444]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=81106444]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0094593, 0)
 shape = SubResource("BoxShape3D_uysds")
 
-[node name="RootNode" type="Node3D" parent="." unique_id=1103166648]
-transform = Transform3D(0.024334926, 0, 0, 0, 0.024334926, 1.0637135e-09, 0, -1.0637135e-09, 0.024334926, 0, 0, 0)
+[node name="box" type="Node3D" parent="." unique_id=900016854]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 8.526512e-15, 0, -8.526512e-15, 1.2, 0, 0.26765427, -1.7763568e-15)
 
-[node name="box" type="Node3D" parent="RootNode" unique_id=900016854]
-transform = Transform3D(41.0932, 0, 0, 0, 41.0932, -1.7962407e-06, 0, 1.7962407e-06, 41.0932, 0, 10.99877, 4.8077146e-07)
-
-[node name="box_box_0" type="MeshInstance3D" parent="RootNode/box" unique_id=16252410]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.42, 0)
+[node name="box_box_0" type="MeshInstance3D" parent="box" unique_id=16252410]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, -4.2351647e-22, 0, 4.2351647e-22, 0.99999994, 0, -0.5363339, -8.266025e-16)
 mesh = SubResource("ArrayMesh_64ywd")
