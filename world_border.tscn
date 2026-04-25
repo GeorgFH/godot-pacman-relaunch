@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cov3gg5v7cyo6"]
+
+[ext_resource type="PackedScene" uid="uid://btboxewwmqcot" path="res://static_body_3d.tscn" id="1_4jt1s"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vef74"]
+
+[node name="WorldBorder" type="Node3D" unique_id=2020130601]
+
+[node name="Right" type="Node3D" parent="." unique_id=130040566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Right" unique_id=493892398]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Right/StaticBody3D" unique_id=701404937]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_vef74")
+
+[node name="Left" type="Node3D" parent="." unique_id=1004649475]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -15, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Left" unique_id=288116937]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Left/StaticBody3D" unique_id=35802144]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_vef74")
+
+[node name="Back" type="Node3D" parent="." unique_id=1962791102]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -15)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Back" unique_id=518892179]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Back/StaticBody3D" unique_id=1004185091]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_vef74")
+
+[node name="Front" type="Node3D" parent="." unique_id=1908766065]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 15)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Front" unique_id=1936651507]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Front/StaticBody3D" unique_id=2015007444]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_vef74")
+
+[node name="Bottom" parent="." unique_id=906496084 instance=ExtResource("1_4jt1s")]
