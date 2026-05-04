@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	else:
-		velocity.y = 0   # 👈 DAS ist die Lösung
+		velocity.y = 0  
 	
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED

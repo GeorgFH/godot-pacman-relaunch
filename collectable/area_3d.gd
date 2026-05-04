@@ -14,7 +14,7 @@ func _on_body_entered(body):
 	if body.name == "Player":
 		Ui.add_point()
 		
-		$CollisionShape3D.disabled = true   # 👈 WICHTIG
+		$CollisionShape3D.disabled = true   
 		
 		audio.play()
 		await audio.finished

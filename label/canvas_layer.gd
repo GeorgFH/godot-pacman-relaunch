@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var game_duration = 40
+@export var game_duration = 30
 @export var win_score = 10
 @export var stage = 0
 
